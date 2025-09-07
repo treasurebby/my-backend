@@ -4,12 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My first static website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1> This website shows the pictures of random dogs anytime you reload</h1>
-     <p>Dog generator 🎉</p>
+<body class="bg-pink-100 shadow-md">
+    <h1 class = "text-center text-base font-semibold text-black-500">
+         This website shows the pictures of random dogs anytime you reload
+        </h1>
+     <p class = "text-left text-base text-grey-500">
+        Dog and Cat Picture generator 🎉
+    </p>
      <p>
-        <img src = "{{dog_pic}}" alt="random dogs">
+            Here is a beautiful dog
+        <img src = "{{dog_pic}}" class="w-64 h-64 object-cover rounded" alt="random dogs">
+
+        <form method="POST" action="/guess_dog">
+            <input type="text" name="guess_dog" placeholder="Guess the dog's breed" class="border p-2 rounded w-48 text-center">
+            <button type="submit" class="bg-white-200 text-black px-4 py-2 rounded hover:bg-pink-600 transition">
+            Submit
+            </button>
+        </form>
+    </p>
+    <p>
+        Here is a beautiful cat
+    </p>
+    <p>
+        <img src = "{{cat_pic}}" class="w-64 h-64 object-cover rounded" alt="random cats">
+        <form method="POST" action="/guess_cat">
+            <input type="text" name="guess_cat" placeholder="Guess the cat's breed" class="border p-2 rounded w-48 text-center">
+            <button type="submit" class="bg-white-200 text-black px-4 py-2 rounded hover:bg-pink-600 teansition">
+                Submit
+            </button>
+        </form>
     </p>
 </body>
 </html>
