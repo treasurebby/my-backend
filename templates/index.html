@@ -18,11 +18,20 @@
         <img src = "{{dog_pic}}" class="w-64 h-64 object-cover rounded" alt="random dogs">
 
         <form method="POST" action="/guess_dog">
-            <input type="text" name="guess_dog" placeholder="Guess the dog's breed" class="border p-2 rounded w-48 text-center">
+            <input type="text" name="dog_guess" placeholder="Guess the dog's breed" class="border p-2 rounded w-48 text-center">
             <button type="submit" class="bg-white-200 text-black px-4 py-2 rounded hover:bg-pink-600 transition">
             Submit
             </button>
         </form>
+        
+    {% if dog_result %}
+        <p class="text-center text-lg font-semibold text-blue-700">{{ dog_result }}</p>
+         <a href="/" class="mt-2 inline-block bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 transition">
+      Back Home
+   </a>
+    {% endif %}
+
+
     </p>
     <p>
         Here is a beautiful cat
@@ -30,11 +39,19 @@
     <p>
         <img src = "{{cat_pic}}" class="w-64 h-64 object-cover rounded" alt="random cats">
         <form method="POST" action="/guess_cat">
-            <input type="text" name="guess_cat" placeholder="Guess the cat's breed" class="border p-2 rounded w-48 text-center">
+            <input type="text" name="cat_guess" placeholder="Guess the cat's breed" class="border p-2 rounded w-48 text-center">
             <button type="submit" class="bg-white-200 text-black px-4 py-2 rounded hover:bg-pink-600 teansition">
                 Submit
             </button>
         </form>
+
+       
+    {% if cat_result %}
+        <p class="text-center text-lg font-semibold text-blue-700">{{ cat_result }}</p>
+         <a href="/" class="mt-2 inline-block bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 transition">
+      Back Home
+   </a>
+    {% endif %}
     </p>
 </body>
 </html>
